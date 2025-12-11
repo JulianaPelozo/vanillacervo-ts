@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/items', itemRoutes);
-app.use('/api/categories', categoryRoutes); // Adicionado
+app.use('/api/categories', categoryRoutes); 
 
 app.get('/health', (req, res) => {
   res.json({ 

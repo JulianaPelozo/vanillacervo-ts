@@ -9,7 +9,6 @@ export const errorHandler = (
   console.error('Erro:', error.message);
   console.error('Stack:', error.stack);
 
-  // Erros específicos do MySQL
   if (error.message.includes('ER_DUP_ENTRY')) {
     return res.status(400).json({ 
       error: 'Registro duplicado. Este item já existe.' 
@@ -34,7 +33,6 @@ export const errorHandler = (
     });
   }
 
-  // Erro genérico
   res.status(500).json({ 
     error: 'Erro interno do servidor',
     message: process.env.NODE_ENV === 'development' ? error.message : undefined
